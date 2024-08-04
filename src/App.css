@@ -1,0 +1,43 @@
+body
+{
+  background-color: #17181f;
+  color: #aaa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  max-width: 300px;
+  margin: 20px auto; /*to center the div*/
+}
+
+form{
+  border: 1px solid yellow;
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+
+}
+
+form input[type="text"] {
+  background: none;
+  border: 0;
+  padding: 5px 8px;
+  width: 100%;
+}
+
+form button {
+  background-color: #61DAFB;
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+div.task {
+  background-color: #30313D ;
+  border-radius: 10px;
+  padding: 5px;
+  margin-top: 5px;
+}
