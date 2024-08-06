@@ -1,13 +1,17 @@
 
 import TaskForm from './components/TaskForm.js';
 import Task from './components/Task.js';
-import{useState} from "react";
+import{useEffect, useState} from "react";
 import './App.css';
 
 
 function App() {
   const [tasks, setTasks] = useState([]);
-
+  //adding local storage
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);//only runs when 'tasks'changes
+  
   const addTask = (taskName) => {
     //console.log("TASK NAME PARENT", taskName);
    // setTasks((prevTasks) => [...prevTasks, {taskName: taskName, done: false }]);
