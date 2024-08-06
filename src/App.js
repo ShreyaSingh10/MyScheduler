@@ -10,26 +10,22 @@ function App() {
 
   const addTask = (taskName) => {
     //console.log("TASK NAME PARENT", taskName);
-    setTasks((prevTasks) => [...prevTasks, taskName]);
-  //   SECOND WAY
-  //   setTasks((prevTasks) => {
-  //     const updatedTasks = [...prevTasks, taskName];
-  //     console.log("UPDATED TASKS INSIDE FUNCTION:", updatedTasks);
-  //     return updatedTasks// Update tasks immutably using the functional form of setState
-  // });
+   // setTasks((prevTasks) => [...prevTasks, {taskName: taskName, done: false }]);
+    //SECOND WAY
+    setTasks((prevTasks) => {
+      const updatedTasks = [...prevTasks, {taskName: taskName, done: false }];
+      console.log("UPDATED TASKS INSIDE FUNCTION:", updatedTasks);
+      return updatedTasks// Update tasks immutably using the functional form of setState
+  });
   //console.log(tasks);// Note: This console log may not reflect the latest state due to async state updates
 }
-
-// const addTask = (taskName) => {
-//   console.log("TASK NAME PARENT", taskName);
-//   setTasks((prevTasks) => [...prevTasks, taskName]);
-// } //THIS WONT UPDATE ARRAY IN REALTIME
 
   return (
     <div className='main'>
       <TaskForm addTask ={addTask}/>
-      <Task/>
-     
+      {tasks.map(task => 
+        <Task {...task}/>
+      )} 
     </div>
   );
 }

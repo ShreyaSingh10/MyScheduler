@@ -1,13 +1,15 @@
 import{useState} from "react";
+import Checkbox from "./Checkbox";
 
-export default function Task(){
+export default function Task({taskName, done}){
 
    //const 
     return (
        <div className="task">
-        <input type="checkbox"/>
-        Task 1
+         <Checkbox defaultChecked={done}/>
+         {taskName}
        </div>
+
     );
 }
 
