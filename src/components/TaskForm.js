@@ -8,10 +8,9 @@ export default function TaskForm({addTask}){//correct way to recieve function fr
     const handleSubmit= (e) => {
 
         e.preventDefault();
-        console.log("UPDATING");
         if(taskName){
             addTask(taskName);
-            setTaskName('');//reinitialise for necxt taskname
+            setTaskName('');//reinitialise for next taskname
         }
        
     }

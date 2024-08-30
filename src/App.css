@@ -9,10 +9,39 @@ body
 }
 
 .main {
-  max-width: 300px;
+  max-width: 400px;
   margin: 20px auto; /*to center the div*/
+  text-align: center;
+}
+.heading {
+  font-size: 40px;
+  margin: 20px;
+  font-family: georgia, serif;
 }
 
+.goal, .counter {
+  margin-bottom: 20px;
+  font-family: georgia, serif;
+  border-radius: 10px;
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid grey;
+  transition: opacity 2s ease, transform 2s ease; 
+}
+
+.goal {
+  border: 5px solid rgb(134, 215, 123);
+  background-color: bisque;
+  transform: scale(1.5); /* Slightly smaller */
+}
+  
+.note textarea{
+  border: 5px;
+  padding: 5px;
+  width: 100%;
+  height: 100px;
+  overflow: scroll ;
+}
 form{
   border: 1px solid yellow;
   border-radius: 10px;
@@ -39,6 +68,34 @@ form button {
 div.task {
   background-color: #30313D ;
   border-radius: 10px;
-  padding: 5px;
+  padding: 10px;
   margin-top: 5px;
+  display: flex;
+  align-items: center ;
+  transition: opacity .3s linear;
 }
+
+div.task.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+div.task svg {
+  height: 20px;
+  margin-right: 4px;
+  fill: #61DAFB;
+}
+
+.dustbin {
+  margin-left: auto; /* Pushes the button to the far right */
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.taskdiv {
+  padding: 5px; /* Add some space on the right */
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow-x: auto; /* Hides overflow text */
+}
+
