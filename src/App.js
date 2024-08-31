@@ -36,6 +36,12 @@ const updateTaskDone = (taskIndex, newDone) => {
     return newTasks;
    })
 }
+
+const deleteTask = (indexToRemove) => {
+  setTasks((prevTasks) => 
+    prevTasks.filter((task,index) => index!= indexToRemove ));
+}
+
 const numberComplete = tasks.filter(t => t.done).length;
 const numberTotal = tasks.length;
 const goalAchieved = numberComplete === numberTotal && numberTotal !== 0;
@@ -52,7 +58,10 @@ console.log("GOAL", goalAchieved,numberComplete,numberTotal );
       <div className='note'><textarea placeholder='Gratitude Letter to God' type="text"/></div>
       <TaskForm addTask ={addTask}/>
       {tasks.map((task,index) => 
-        <Task {...task} onToggle={done => (updateTaskDone(index,done))} />
+        <Task {...task} 
+        key = {index}
+        onDelete={() => deleteTask(index)}
+        onToggle={done => (updateTaskDone(index,done))} />
       )} 
     </div>
   );
