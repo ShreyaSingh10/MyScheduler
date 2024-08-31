@@ -11,7 +11,19 @@ function App() {
       const savedTasks = localStorage.getItem('tasks');
       return savedTasks ? JSON.parse(savedTasks) : [];
     });
+
+  const getCurrentDate = () => {
+    const today = new Date();
+    return today.toLocaleDateString('en-US', {
+      weekday: 'long', // "Monday"
+      year: 'numeric', // "2024"
+      month: 'long', // "August"
+      day: 'numeric' // "30"
+    });
+  };
  
+  const [currentDate, setCurrentDate] = useState(getCurrentDate());
+  //const currentDate = getCurrentDate(); As we dont require using setCurrentDate here
 
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
@@ -50,6 +62,7 @@ console.log("GOAL", goalAchieved,numberComplete,numberTotal );
 
   return (
     <div className='main'>
+      <div className='date'>Today's Date: {currentDate}</div> 
       <div className='heading'> My Magical List </div>
       {goalAchieved? 
         <div className="goal">GOAL ACHIEVED</div>:
