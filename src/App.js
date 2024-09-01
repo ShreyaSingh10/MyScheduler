@@ -54,6 +54,13 @@ const deleteTask = (indexToRemove) => {
     prevTasks.filter((task,index) => index!= indexToRemove ));
 }
 
+const updateTaskName = (taskIndex, newTaskName) => {
+  setTasks(prevTasks => {
+    const newTasks = [...prevTasks];
+    newTasks[taskIndex].taskName = newTaskName;
+    return newTasks;
+  })
+}
 const numberComplete = tasks.filter(t => t.done).length;
 const numberTotal = tasks.length;
 const goalAchieved = numberComplete === numberTotal && numberTotal !== 0;
@@ -74,6 +81,7 @@ console.log("GOAL", goalAchieved,numberComplete,numberTotal );
         <Task {...task} 
         key = {index}
         onDelete={() => deleteTask(index)}
+        onRename={(newName) => updateTaskName(index, newName)}
         onToggle={done => (updateTaskDone(index,done))} />
       )} 
     </div>
