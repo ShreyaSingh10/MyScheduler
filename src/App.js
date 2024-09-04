@@ -74,8 +74,11 @@ const goalAchieved = numberComplete === numberTotal && numberTotal !== 0;
 
   return (
     <div className='main'>
-      <div className='date'>Today's Date: {currentDate}</div> 
-      <div className='heading'> My Magical List </div>
+      <span className='date'>Today's Date: {currentDate}</span> 
+      <div className="date-creator-container">
+      <span className='date'>Today's Date: {currentDate}</span> 
+      <span className='creator'>Made by Pyaari Rajput</span> 
+    </div>
       {goalAchieved? 
         <div className="goal">GOAL ACHIEVED</div>:
         <div className="counter">{numberComplete}/{numberTotal} Complete</div>

@@ -13,6 +13,26 @@ body
   margin: 20px auto; /*to center the div*/
   text-align: center;
 }
+
+.date-creator-container {
+  display: flex;
+  justify-content: space-between; /* Positions the children on the left and right */
+  margin-bottom: 20px; /* Adds space below the container */
+  font-family: georgia, serif;
+  color: whitesmoke;
+  width: 100%;
+}
+
+.date {
+  text-align: left; /* Align text to the left */
+  flex: 1;
+}
+
+.creator {
+  text-align: right; /* Align text to the right */
+  flex: 1;
+}
+
 .heading {
   font-size: 40px;
   margin: 20px;
