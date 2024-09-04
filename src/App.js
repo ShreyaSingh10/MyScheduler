@@ -61,11 +61,16 @@ const updateTaskName = (taskIndex, newTaskName) => {
     return newTasks;
   })
 }
+
+const deleteList = () => {
+  setTasks([]); //deleting all tasks for next day
+}
+//The deleteAllTasks function clears the tasks by setting the state of tasks to an empty array ([]).
+//Since you have a useEffect hook that syncs the state with localStorage, this will also clear the tasks stored in localStorage.
+
 const numberComplete = tasks.filter(t => t.done).length;
 const numberTotal = tasks.length;
 const goalAchieved = numberComplete === numberTotal && numberTotal !== 0;
-console.log("GOAL", goalAchieved,numberComplete,numberTotal );
-
 
   return (
     <div className='main'>
@@ -76,6 +81,7 @@ console.log("GOAL", goalAchieved,numberComplete,numberTotal );
         <div className="counter">{numberComplete}/{numberTotal} Complete</div>
       }
       <div className='note'><textarea placeholder='Gratitude Letter to God' type="text"/></div>
+      {numberTotal !== 0 && <div className="delete" onClick={deleteList}>Delete All</div>}
       <TaskForm addTask ={addTask}/>
       {tasks.map((task,index) => 
         <Task {...task} 
