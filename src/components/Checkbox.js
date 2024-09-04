@@ -2,7 +2,6 @@ import { useState } from "react";
 
 export default function Checkbox({initialChecked, onClick}) {
     const [checked, setChecked] = useState(initialChecked);
-    //console.log("DONE", checked);
 
     const handleClick = () => {
         setChecked(!checked); // Update local state for visual feedback

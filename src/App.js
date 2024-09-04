@@ -30,7 +30,6 @@ function App() {
   }, [tasks]);//only runs when 'tasks'changes
 
   const addTask = (taskName) => {
-    //console.log("TASK NAME PARENT", taskName);
    // setTasks((prevTasks) => [...prevTasks, {taskName: taskName, done: false }]);
     //SECOND WAY
     setTasks((prevTasks) => {
@@ -74,11 +73,11 @@ const goalAchieved = numberComplete === numberTotal && numberTotal !== 0;
 
   return (
     <div className='main'>
-      <span className='date'>Today's Date: {currentDate}</span> 
-      <div className="date-creator-container">
-      <span className='date'>Today's Date: {currentDate}</span> 
-      <span className='creator'>Made by Pyaari Rajput</span> 
+     <div className="date-creator-container">
+      <span className='date'>{currentDate}</span> 
+      <span className='creator'>Made by Pyaari</span> 
     </div>
+      <div className='heading'> My Magical List </div>
       {goalAchieved? 
         <div className="goal">GOAL ACHIEVED</div>:
         <div className="counter">{numberComplete}/{numberTotal} Complete</div>

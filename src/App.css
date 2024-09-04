@@ -19,8 +19,8 @@ body
   justify-content: space-between; /* Positions the children on the left and right */
   margin-bottom: 20px; /* Adds space below the container */
   font-family: georgia, serif;
-  color: whitesmoke;
   width: 100%;
+  font-size: small;
 }
 
 .date {
@@ -85,7 +85,7 @@ form{
   border-radius: 10px;
   padding: 5px;
   display: flex;
-
+  margin-top: 10px;
 }
 
 form input[type="text"] {
